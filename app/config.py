@@ -1,8 +1,7 @@
 from functools import lru_cache
 from typing import Literal, Optional
 
-from pydantic import Field, AnyUrl
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings, Field, AnyUrl
 
 
 class Settings(BaseSettings):
