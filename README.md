@@ -17,4 +17,5 @@ Production-ready backend for asset processing: authentication, projects/assets u
 ### 1) Clone & configure env
 ```bash
 git clone <this-repo> ai-creat-backend
+cd ai-creat-backend
 cp .env.example .env
