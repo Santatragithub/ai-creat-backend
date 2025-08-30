@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 from typing import List, Optional, Literal
 from pydantic import BaseModel
 
@@ -17,13 +16,24 @@ class LayoutGuidance(BaseModel):
 
 
 class AdaptationRule(BaseModel):
-    focalPointLogic: Literal["face-centric", "product-centric", "face-centric & product-centric", "human-centered"]
+    focalPointLogic: Literal[
+        "face-centric",
+        "product-centric",
+        "face-centric & product-centric",
+        "human-centered",
+    ]
     layoutGuidance: Optional[LayoutGuidance] = None
 
 
 class AIBehaviorRule(BaseModel):
     adaptationStrategy: Literal["crop", "extend-canvas", "add-background"]
     imageQuality: Literal["low", "medium", "high"]
+
+
+class UploadModerationRule(BaseModel):
+    allowedImageTypes: List[Literal["jpeg", "png", "psd"]]
+    maxFileSizeMb: int
+    nsfwAlertsActive: bool
 
 
 class AllowedLogoSources(BaseModel):
